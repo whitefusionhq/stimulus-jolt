@@ -1,0 +1,26 @@
+{
+  "name": "stimulus-jolt-example",
+  "version": "1.0.0",
+  "description": "Show and test the features of Jolt",
+  "scripts": {
+    "build": "webpack",
+    "server": "node server.js"
+  },
+  "author": "Jared White",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/preset-env": "^7.4.5",
+    "babel-loader": "^8.0.6",
+    "express": "^4.17.1",
+    "html-webpack-plugin": "^3.2.0",
+    "webpack": "^4.32.2",
+    "webpack-cli": "^3.3.2",
+    "webpack-dev-middleware": "^3.7.0"
+  },
+  "dependencies": {
+    "stimulus": "^1.1.1"
+  }
+}

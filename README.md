@@ -14,7 +14,7 @@ You can write code like this:
 ```javascript
 this.renderTargets({
   name: [
-    {text: "ACME Widgets, Inc."},
+    "ACME Widgets, Inc.",
     {class: 'text-bold', toggle: true},
     {data: 'id', value: 25}
   ],

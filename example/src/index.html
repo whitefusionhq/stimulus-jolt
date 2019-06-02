@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+  <head>
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    <style>
+      html { font-family: sans-serif; }
+      .blue { color: blue; }
+      hr { border: 0.5px solid #eee; margin: 30px 0; }
+    </style>
+  </head>
+  <body>
+    <h1>Hello (Jolt) World</h1>
+    <div data-controller="card">
+      <p>Name: <strong data-target="card.name"></strong></p>
+      <p>Age: <strong data-target="card.age"></strong></p>
+      <p>Bio: <strong data-target="card.bio"></strong></p>
+    </div>
+    <hr/>
+  </body>
+</html>

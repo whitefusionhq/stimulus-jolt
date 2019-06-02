@@ -26,21 +26,14 @@ export class Renderer {
       if (this.controller[`has${this.keyCapitalized(key)}Target`]) {
         let target = this.controller[`${key}Target`]
 
-        // Check if the it's a simple text value or an advanced directive
-        if (typeof value == "string" || typeof value == "number") {
-          const keyValue = this.targetValue(key, value) 
-          if (target.textContent != keyValue) {
-            target.textContent = keyValue
-          }
-        }
-        else if (Array.isArray(value)) {
-          // Loop through all the directives
+        // Check for an array of directive
+        if (Array.isArray(value)) {
           value.forEach(directive => {
             this.handleDirective(directive, key, target)
           })
         }
         else {
-          // If all else fails, maybe it's a single directive object
+          // Otherwise it's a single directive object or value
           this.handleDirective(value, key, target)
         }
       }
@@ -48,7 +41,13 @@ export class Renderer {
   }
 
   handleDirective(directive, key, target) {
-    if (directive.text) {
+    if (typeof directive == "string" || typeof directive == "number") {
+      const keyValue = this.targetValue(key, directive) 
+      if (target.textContent != keyValue) {
+        target.textContent = keyValue
+      }
+    }
+    else if (directive.text) {
       const textValue = this.targetValue(key, directive.text)
       if (target.textContent != textValue) {
         target.textContent = textValue
